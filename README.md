@@ -12,3 +12,10 @@ I created this git repository to jot down notes about installing and configuring
     sudo apt-get update
     sudo apt-get upgrade
     sudo apt-get install git vim atom google-chrome-beta nmap
+
+
+
+
+Unity Tweak Tool
+
+**TODO:** Figure how to get Solarized for Atom and Terminal.
