@@ -10,3 +10,5 @@ I created this git repository to jot down notes about installing and configuring
 
 
 TODO Need command line to download and install Chrome, Atom.
+
+    sudo dpkg --install atom-amd64.deb
