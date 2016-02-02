@@ -31,4 +31,10 @@ The following will update Ubuntu with the lasted of the currently installed appl
     #sudo apt-get install unity-tweak-tool -y
     #sudo apt-get install compizconfig-settings-manager -y
 
+
+
+
+    git config --global user.email "warren@dubelyoo.com"
+    git config --global user.name "Warren Gavin"
+
 **TODO:** Figure how to get Solarized for vim, Atom and Terminal.
