@@ -10,12 +10,18 @@ I created this git repository to jot down notes about installing and configuring
     sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 
     sudo apt-get update
-    sudo apt-get upgrade
-    sudo apt-get install git vim atom google-chrome-beta nmap
+    sudo apt-get upgrade -y
+    sudo apt-get install git -y
+    sudo apt-get install vim -y
+    sudo apt-get install atom -y
+    sudo apt-get install google-chrome-beta -y
+    sudo apt-get install nmap -y
+    sudo apt-get install unity-tweak-tool -y
+    sudo apt-get install compizconfig-settings-manager -y
 
 
 
 
 Unity Tweak Tool
 
-**TODO:** Figure how to get Solarized for Atom and Terminal.
+**TODO:** Figure how to get Solarized for vim, Atom and Terminal.
