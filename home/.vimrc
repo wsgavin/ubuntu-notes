@@ -34,6 +34,6 @@ set title
 execute pathogen#infect()
 
 " Settings for solorized
-syntax enable
-set background=dark
-colorscheme solarized
+"syntax enable
+"set background=dark
+"colorscheme solarized

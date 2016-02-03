@@ -18,7 +18,7 @@ curl -LSso "$HOME/.vim/autoload/pathogen.vim" https://tpo.pe/pathogen.vim
 # Installing some plugins
 git clone git://github.com/tpope/vim-sensible.git \
   "$HOME/.vim/bundle/vim-sensible"
-git clone git://github.com/altercation/vim-colors-solarized.git \
-  "$HOME/.vim/bundle/vim-colors-solarized"
+#git clone git://github.com/altercation/vim-colors-solarized.git \
+#  "$HOME/.vim/bundle/vim-colors-solarized"
 
 echo
