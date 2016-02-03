@@ -33,6 +33,11 @@ The following will update Ubuntu with the lasted of the currently installed appl
     #sudo apt-get install compizconfig-settings-manager -y
 
 
+    sudo add-apt-repository ppa:webupd8team/sublime-text-3
+    sudo apt-get update
+    sudo apt-get install sublime-text-installer
+
+
 
 
     git config --global user.email "warren@dubelyoo.com"
