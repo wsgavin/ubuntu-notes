@@ -2,6 +2,15 @@
 
 set -e
 
+
+unset account_password
+unset mysql_root_password
+unset git_fullname
+unset git_email
+
+. init/banner.sh
+. init/input.sh
+
 # Adding GitHub atom repository
 sudo add-apt-repository ppa:webupd8team/atom -y
 
