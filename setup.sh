@@ -30,7 +30,7 @@ sudo apt-get install curl -y
 sudo apt-get install ctags -y
 sudo apt-get install atom -y
 sudo apt-get install google-chrome-beta -y
-sudo apt-get install sublime-text-installer
+sudo apt-get install sublime-text-installer -y
 
 # Initializing scripts...
 . init/git.sh
