@@ -17,6 +17,7 @@ The following will update Ubuntu with the lasted of the currently installed appl
     sudo apt-get install python-gtkspellcheck -y
     sudo apt-get install python-virtualenv -y
     sudo apt-get install moreutils -y
+    sudo apt-get install curl -y
 
     # Adding repositories
 
