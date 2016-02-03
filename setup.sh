@@ -36,3 +36,5 @@ sudo apt-get install sublime-text-installer
 . init/git.sh
 . init/vim.sh
 . init/bash.sh
+
+exit 0
