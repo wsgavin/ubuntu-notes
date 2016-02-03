@@ -3,8 +3,8 @@
 echo
 printf "Configuring git..."
 
-git config --global user.name "Warren Gavin"
-git config --global user.email "warren@dubelyoo.com"
+git config --global user.name "$git_fullname"
+git config --global user.email "$git_email"
 git config --global core.autocrlf input
 git config --global core.safecrlf true
 git config --global core.editor vim
