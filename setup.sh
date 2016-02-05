@@ -4,7 +4,6 @@ set -e
 
 
 unset account_password
-unset mysql_root_password
 unset git_fullname
 unset git_email
 

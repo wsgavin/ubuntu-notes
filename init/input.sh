@@ -16,7 +16,6 @@ read -r sudo_password
 stty echo
 
 account_password="$sudo_password"
-mysql_root_password="$sudo_password"
 
 echo
 echo
