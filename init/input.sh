@@ -9,11 +9,21 @@ git_email=""
 
 stty -echo
 echo
-echo "Password entered will be used when required. Can be changed lager."
+echo "Password entered will be used when required. Can be changed later."
 echo
 printf "Enter password: "
 read -r sudo_password
 stty echo
+
+echo "Checking if current user can sudo..."
+
+is_sudoer="$(echo $sudo_password | sudo -vS)"
+
+[ ! -z $is_sudoer ] || { echo "$is_sudoer"; exit 1; }
+
+unset is_sudoer
+
+echo "done."
 
 account_password="$sudo_password"
 
