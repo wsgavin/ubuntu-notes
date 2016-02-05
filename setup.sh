@@ -2,7 +2,6 @@
 
 set -e
 
-
 unset account_password
 unset git_fullname
 unset git_email
@@ -44,5 +43,6 @@ sudo apt-get install sublime-text-installer -y
 . init/git.sh
 . init/vim.sh
 . init/bash.sh
+. init/nodejs.sh
 
 exit 0
