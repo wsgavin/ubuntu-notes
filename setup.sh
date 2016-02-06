@@ -7,6 +7,7 @@ unset git_fullname
 unset git_email
 
 . init/banner.sh
+. init/check.sh
 . init/input.sh
 
 # Adding GitHub atom repository
