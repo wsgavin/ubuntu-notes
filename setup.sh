@@ -2,6 +2,7 @@
 
 #set -e
 
+# Just because, clearing some variables that are shared between other scripts.
 unset account_password
 unset git_fullname
 unset git_email
@@ -9,22 +10,11 @@ unset git_email
 . init/banner.sh
 . init/check.sh
 . init/input.sh
-
-# Adding GitHub atom repository
-sudo add-apt-repository ppa:webupd8team/atom -y
-
-# Adding Sublime Text 3 repository
-sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
-
-# Adding Google Chrome repository
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub \
-  | sudo apt-key add -
-sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" \
-  >> /etc/apt/sources.list.d/google-chrome.list'
+. init/repos.sh
 
 # Initializing apt-get
 sudo apt-get update
-sudo apt-get upgrade -y
+sudo apt-get dist-upgrade -y
 
 # Installing various applications...
 sudo apt-get install git -y
@@ -39,6 +29,9 @@ sudo apt-get install ctags -y
 sudo apt-get install atom -y
 sudo apt-get install google-chrome-beta -y
 sudo apt-get install sublime-text-installer -y
+
+sudo apt-get clean
+sudo apt-get autoclean
 
 # Initializing scripts...
 . init/git.sh

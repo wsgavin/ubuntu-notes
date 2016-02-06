@@ -36,6 +36,9 @@ is_sudoer="$(echo $sudo_password | sudo -vS &>/dev/null)"
 [ $? -eq 0 ] ||
   {
     echo -e >&2 "${COLOR_RED}${CHAR_XMARK}${COLOR_RESET} sudo access denied."
+    echo
+    echo "Talk with your system administrator for sudoer access."
+    echo
     exit 1;
   }
 
@@ -48,14 +51,25 @@ echo -e "${COLOR_GREEN}${CHAR_CHECKMARK}${COLOR_RESET} sudoers access."
 # Checking for git...
 command -v git >/dev/null 2>&1 ||
   {
-    echo -e >&2 "${COLOR_RED}${CHAR_XMARK}${COLOR_RESET} git not installed."
+    echo -e >&2 "${COLOR_RED}${CHAR_XMARK}${COLOR_RESET} git not installed.";
     echo;
-    echo "Run 'sudo apt-get install git -y' and rerun this script.";
-    echo;
-    exit 1;
+    read -p "Would you like to install git? [Y/n]: " yn
+
+    case "$yn" in
+      ""|[Yy])
+          sudo apt-get install git -y
+        ;;
+      *)
+        echo "Run 'sudo apt-get install git -y' and rerun this script.";
+        echo
+        exit 1;
+        ;;
+    esac
+
   }
 
+# Getting here does assumes if we attemtped to install git it worked.
 echo -e "${COLOR_GREEN}${CHAR_CHECKMARK}${COLOR_RESET} git installed."
 
-# TODO see if we can remidate git on the spot if possible
-# TODO git clone repository
+echo
+git clone https://github.com/wsgavin/ubuntu-notes.git
