@@ -7,34 +7,34 @@ regex_email="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
 git_fullname="$(getent passwd `whoami` | awk -F':' '{print $5}' | sed 's/,//g')"
 git_email=""
 
-stty -echo
-echo
-echo "Password entered will be used when required. Can be changed later."
-echo
-printf "Enter password: "
-read -r sudo_password
-stty echo
+# stty -echo
+# echo
+# echo "Enter the administrative/sudo password for this system."
+# echo
+# printf "Enter password: "
+# read -r sudo_password
+# stty echo
+#
+# echo
+# echo "Checking if current user can sudo..."
+#
+# # Reseting sudo; just to ensure the test goes as planned.
+# sudo -k
+#
+# # Attempting to use the entered password with sudo.
+# is_sudoer="$(echo $sudo_password | sudo -vS &>/dev/null)"
+#
+# # If the exit status $? is not 0 something went wrong and we'll exit.
+# [ $? -eq 0 ] || { echo "Current user does not have sudoer access."; exit 1; }
+#
+# # Unsetting for good measure...
+# unset is_sudoer
+#
+# # If we've made it here we should be good.
+# echo "done."
+#
+# account_password="$sudo_password"
 
-echo
-echo "Checking if current user can sudo..."
-
-# Reseting sudo
-sudo -k
-
-is_sudoer="$(echo $sudo_password | sudo -vS &>/dev/null)"
-#is_sudoer="$(sudo -vn true &>/dev/null)"
-
-#echo $?
-
-[ $? -eq 0 ] || { echo "Current user does not have sudoer access."; exit 1; }
-
-unset is_sudoer
-
-echo "done."
-
-account_password="$sudo_password"
-
-echo
 echo
 echo "Configuring git settings..."
 echo
