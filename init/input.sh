@@ -15,11 +15,18 @@ printf "Enter password: "
 read -r sudo_password
 stty echo
 
+echo
 echo "Checking if current user can sudo..."
 
-is_sudoer="$(echo $sudo_password | sudo -vS)"
+# Reseting sudo
+sudo -k
 
-[ ! -z $is_sudoer ] || { echo "$is_sudoer"; exit 1; }
+is_sudoer="$(echo $sudo_password | sudo -vS &>/dev/null)"
+#is_sudoer="$(sudo -vn true &>/dev/null)"
+
+#echo $?
+
+[ $? -eq 0 ] || { echo "Current user does not have sudoer access."; exit 1; }
 
 unset is_sudoer
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+#set -e
 
 unset account_password
 unset git_fullname
