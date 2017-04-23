@@ -29,6 +29,7 @@ sudo apt-get install ctags -y
 sudo apt-get install atom -y
 sudo apt-get install google-chrome-stable -y
 sudo apt-get install sublime-text-installer -y
+sudo apt-get install php -y
 
 sudo apt-get clean
 sudo apt-get autoclean
