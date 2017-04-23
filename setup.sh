@@ -27,7 +27,7 @@ sudo apt-get install moreutils -y
 sudo apt-get install curl -y
 sudo apt-get install ctags -y
 sudo apt-get install atom -y
-sudo apt-get install google-chrome-beta -y
+sudo apt-get install google-chrome-stable -y
 sudo apt-get install sublime-text-installer -y
 
 sudo apt-get clean
@@ -38,5 +38,6 @@ sudo apt-get autoclean
 . init/vim.sh
 . init/bash.sh
 . init/nodejs.sh
+. init/atom.sh
 
 exit 0
