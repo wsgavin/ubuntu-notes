@@ -72,4 +72,4 @@ command -v git >/dev/null 2>&1 ||
 echo -e "${COLOR_GREEN}${CHAR_CHECKMARK}${COLOR_RESET} git installed."
 
 echo
-git clone https://github.com/wsgavin/ubuntu-desktop.git
+#git clone https://github.com/wsgavin/ubuntu-desktop.git
