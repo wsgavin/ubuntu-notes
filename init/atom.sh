@@ -2,7 +2,7 @@
 
 apm install atom-beautify
 apm install busy-signal
-apt install intensions
+apm install intensions
 apm install linter-ui-default
 apm install linter
 apm install linter-eslint
