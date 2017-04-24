@@ -35,6 +35,7 @@ sudo apt-get clean
 sudo apt-get autoclean
 
 # Initializing scripts...
+. init/gnome.sh
 . init/git.sh
 . init/vim.sh
 . init/bash.sh
