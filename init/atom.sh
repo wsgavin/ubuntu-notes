@@ -11,6 +11,7 @@ apm install linter-eslint
 apm install linter-php
 apm install git-plus
 apm install linter-shellcheck
+apm install todo-show
 
 echo "Configuring atom..."
 
