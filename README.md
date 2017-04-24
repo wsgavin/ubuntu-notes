@@ -4,7 +4,7 @@ I created this git repository to jot down notes about installing and configuring
 
 ## Updates & Installs
 
-    sudo apt install git
+    sudo apt install git -y
     git clone https://github.com/wsgavin/ubuntuinit-desktop
 
 The following will update Ubuntu with the lasted of the currently installed applications as well as install a few I like to have on my base system. Each application is called separately for documentation purposes (easier to read).
