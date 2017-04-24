@@ -15,6 +15,7 @@ apm install linter-shellcheck
 echo "Configuring atom..."
 
 cat <<EOT >> ${HOME}/.atom/config.cson
+"*":
   core:
     telemetryConsent: "no"
   "markdown-preview":
