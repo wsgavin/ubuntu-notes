@@ -48,6 +48,13 @@ unset is_sudoer
 # If we've made it here we should be good.
 echo -e "${COLOR_GREEN}${CHAR_CHECKMARK}${COLOR_RESET} sudoers access."
 
+echo
+echo "Doing some work as we know we need to get some dependencies..."
+
+sudo apt install git -y
+
+echo "done."
+
 # Checking for git...
 command -v git >/dev/null 2>&1 ||
   {
@@ -57,7 +64,7 @@ command -v git >/dev/null 2>&1 ||
 
     case "$yn" in
       ""|[Yy])
-          sudo apt-get install git -y
+          sudo apt install git -y
         ;;
       *)
         echo "Run 'sudo apt-get install git -y' and rerun this script.";
@@ -71,5 +78,5 @@ command -v git >/dev/null 2>&1 ||
 # Getting here does assumes if we attemtped to install git it worked.
 echo -e "${COLOR_GREEN}${CHAR_CHECKMARK}${COLOR_RESET} git installed."
 
-#echo
-#git clone https://github.com/wsgavin/ubuntu-desktop.git
+echo
+git clone https://github.com/wsgavin/ubuntuinit-desktop
