@@ -7,10 +7,31 @@ unset account_password
 unset git_fullname
 unset git_email
 
-. init/banner.sh
-. init/check.sh
-. init/input.sh
-. init/repos.sh
+# Setting some color constants
+#COLOR_GREEN="\x1b[0;32m"
+COLOR_RED="\x1b[0;31m"
+COLOR_RESET="\x1b[0m"
+
+# Setting some escaped characters
+#CHAR_CHECKMARK="\xE2\x9C\x93"
+CHAR_XMARK="\xE2\x9C\x97"
+
+# Checking for git...
+command -v git >/dev/null 2>&1 ||
+  {
+    echo -e >&2 "${COLOR_RED}${CHAR_XMARK}${COLOR_RESET} git not installed.";
+    echo
+    echo "Run 'sudo apt install git -y' and rerun this script.";
+    echo
+    exit 1
+  }
+
+git clone -q https://github.com/wsgavin/ubuntuinit-desktop
+
+. ubuntuinit-desktop/init/banner.sh
+. ubuntuinit-desktop/init/check.sh
+. ubuntuinit-desktop/init/input.sh
+. ubuntuinit-desktop/init/repos.sh
 
 # Initializing apt-get
 sudo apt-get update
@@ -35,11 +56,11 @@ sudo apt-get clean
 sudo apt-get autoclean
 
 # Initializing scripts...
-. init/gnome.sh
-. init/git.sh
-. init/vim.sh
-. init/bash.sh
-. init/nodejs.sh
-. init/atom.sh
+. ubuntuinit-desktop/init/gnome.sh
+. ubuntuinit-desktop/init/git.sh
+. ubuntuinit-desktop/init/vim.sh
+. ubuntuinit-desktop/init/bash.sh
+. ubuntuinit-desktop/init/nodejs.sh
+. ubuntuinit-desktop/init/atom.sh
 
 exit 0
