@@ -13,6 +13,6 @@ echo "Setting gnome-terminal preferences..."
 #dconf write /org/gnome/terminal/legacy/profiles:/${profile}background-color "'rgb(0,0,0)'"
 #dconf write /org/gnome/terminal/legacy/profiles:/${profile}foreground-color "'rgb(255,255,255)'"
 
-dconf load /org/gnome/terminal/legacy/profiles:/ < ../src/gnome-terminal/profile.dconf
+dconf load /org/gnome/terminal/legacy/profiles:/ < ./src/gnome-terminal/profile.dconf
 
 echo "done."
