@@ -31,8 +31,10 @@ sudo apt install google-chrome-stable -y
 sudo apt install sublime-text-installer -y
 sudo apt install php -y
 sudo apt install shellcheck -y
-sudo apt install build-essential
-sudo apt install linux-headers-"$(uname -r)"
+
+# May already be installed
+sudo apt install build-essential -y
+sudo apt install linux-headers-"$(uname -r)" -y
 
 sudo apt clean
 sudo apt autoclean

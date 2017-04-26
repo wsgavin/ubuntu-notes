@@ -32,3 +32,8 @@ The following are a few steps I have taken while utilizing VirtualBox. These are
 5. Install Guest Additions and reboot.
 6. Run the setup.sh script and reboot.
 7. Go to additional drivers and choose appropriately and reboot.
+
+### VirtualBox Guest Additions
+
+1. Machine -> Settings -> General -> Advanced -> enable Shared Clipboard and/or Drag'n'Drop.
+2. Make sure View -> Auto-resize Guest Display is checked.
