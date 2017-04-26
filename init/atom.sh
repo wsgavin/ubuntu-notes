@@ -19,12 +19,15 @@ cat <<EOT >> ${HOME}/.atom/config.cson
 "*":
   core:
     telemetryConsent: "no"
+  editor:
+    fontSize: 18
   "markdown-preview":
     useGitHubStyle: true
   "tree-view":
     hideIgnoredNames: true
   welcome:
     showOnStartup: false
+
 EOT
 
 echo "done."
