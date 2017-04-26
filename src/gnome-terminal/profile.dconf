@@ -2,5 +2,7 @@
 background-color='rgb(0,0,0)'
 default-size-rows=43
 use-theme-colors=false
-foreground-color='rgb(255,255,255)'
 visible-name='Default'
+foreground-color='rgb(255,255,255)'
+use-system-font=false
+font='Ubuntu Mono 16'
