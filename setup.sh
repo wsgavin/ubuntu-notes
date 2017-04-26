@@ -12,27 +12,30 @@ unset git_email
 . init/input.sh
 . init/repos.sh
 
-# Initializing apt-get
-sudo apt-get update
-sudo apt-get dist-upgrade -y
+# Initializing apt
+sudo apt update
+sudo apt dist-upgrade -y
 
 # Installing various applications...
-sudo apt-get install git -y
-sudo apt-get install vim -y
-sudo apt-get install nmap -y
-sudo apt-get install python-pip -y
-sudo apt-get install python-gtkspellcheck -y
-sudo apt-get install python-virtualenv -y
-sudo apt-get install moreutils -y
-sudo apt-get install curl -y
-sudo apt-get install ctags -y
-sudo apt-get install atom -y
-sudo apt-get install google-chrome-stable -y
-sudo apt-get install sublime-text-installer -y
-sudo apt-get install php -y
+sudo apt install git -y
+sudo apt install vim -y
+sudo apt install nmap -y
+sudo apt install python-pip -y
+sudo apt install python-gtkspellcheck -y
+sudo apt install python-virtualenv -y
+sudo apt install moreutils -y
+sudo apt install curl -y
+sudo apt install ctags -y
+sudo apt install atom -y
+sudo apt install google-chrome-stable -y
+sudo apt install sublime-text-installer -y
+sudo apt install php -y
+sudo apt install shellcheck -y
+sudo apt install build-essential
+sudp apt install linux-headers-"$(uname -r)"
 
-sudo apt-get clean
-sudo apt-get autoclean
+sudo apt clean
+sudo apt autoclean
 
 # Initializing scripts...
 . init/gnome.sh

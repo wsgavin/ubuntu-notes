@@ -1,21 +1,24 @@
 # Ubuntu Init Desktop
 
-I created this git repository to jot down notes about installing and configuring Ubuntu desktop. Purely for personal reasons.
+I created this git repository to make it easier for me to create Ubuntu desktop instance; purely for personal reasons.
 
 ## Updates & Installs
 
+Before I start, Ubuntu as of 17.04 does not come with `git` by default. After the install I clone this repository and run the setup script.
+
 ```bash
 $ sudo apt install git -y
+...
 $ git clone https://github.com/wsgavin/ubuntuinit-desktop
 $ cd ubuntuinit-desktop
 $ ./setup.sh
 ```
 
-
-
 The following will update Ubuntu with the lasted of the currently installed applications as well as install a few I like to have on my base system. Each application is called separately for documentation purposes (easier to read).
 
+```bash
     $ ./setup.sh
+```
 
 ## VirtualBox
 
