@@ -32,7 +32,7 @@ sudo apt install sublime-text-installer -y
 sudo apt install php -y
 sudo apt install shellcheck -y
 sudo apt install build-essential
-sudp apt install linux-headers-"$(uname -r)"
+sudo apt install linux-headers-"$(uname -r)"
 
 sudo apt clean
 sudo apt autoclean
