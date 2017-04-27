@@ -14,6 +14,10 @@ apm install linter-shellcheck
 apm install todo-show
 apm install project-manager
 
+# if [ -f "$HOME/.atom/config.cson" ]; then
+#   touch "$HOME/.atom/config.cson";
+# fi
+
 echo "Configuring atom..."
 
 cat <<EOT >> ${HOME}/.atom/config.cson
