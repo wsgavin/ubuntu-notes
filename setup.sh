@@ -17,6 +17,10 @@ sudo apt update
 sudo apt dist-upgrade -y
 
 # Installing various applications...
+#
+# While these installs could by done in one line, I just felt it was easier
+# to read and update.
+#
 sudo apt install git -y
 sudo apt install vim -y
 sudo apt install nmap -y
