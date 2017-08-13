@@ -13,6 +13,8 @@ apm install linter-php
 apm install linter-shellcheck
 apm install todo-show
 apm install project-manager
+apm install seti-ui
+amp install seti-syntax
 
 # if [ -f "$HOME/.atom/config.cson" ]; then
 #   touch "$HOME/.atom/config.cson";
@@ -24,6 +26,10 @@ cat <<EOT >> ${HOME}/.atom/config.cson
 "*":
   core:
     telemetryConsent: "no"
+    themes: [
+      "seti-ui"
+      "seti-syntax"
+    ]
   editor:
     fontSize: 18
   "markdown-preview":
