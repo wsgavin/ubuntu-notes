@@ -32,7 +32,6 @@ sudo apt install curl -y
 sudo apt install ctags -y
 sudo apt install atom -y
 sudo apt install google-chrome-stable -y
-#sudo apt install sublime-text-installer -y
 sudo apt install php -y
 sudo apt install shellcheck -y
 

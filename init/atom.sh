@@ -14,7 +14,7 @@ apm install linter-shellcheck
 apm install todo-show
 apm install project-manager
 apm install seti-ui
-amp install seti-syntax
+apm install seti-syntax
 
 # if [ -f "$HOME/.atom/config.cson" ]; then
 #   touch "$HOME/.atom/config.cson";
@@ -38,6 +38,7 @@ cat <<EOT >> ${HOME}/.atom/config.cson
     hideIgnoredNames: true
   welcome:
     showOnStartup: false
+
 
 EOT
 

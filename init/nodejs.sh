@@ -20,7 +20,5 @@ npm install --global \
   grunt-cli \
   bower \
 
-#npm cache clean
-
 echo
 echo "done."
