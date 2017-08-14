@@ -12,5 +12,6 @@ git config --global merge.tool vimdiff
 git config --global color.ui auto
 git config --global push.default simple
 git config --global format.pretty "%h - %an, %ar : %s"
+git config --global credential.helper 'cache --timeout=3600'
 
 echo "done."
