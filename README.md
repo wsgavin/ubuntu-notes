@@ -4,6 +4,8 @@ I created this git repository to make it easier for me to create Ubuntu desktop 
 
 **NOTE: Your results may vary; user beware.**
 
+**NOTE: Current scripts are being developed on Ubuntu Desktop 17.10**
+
 ## Updates & Installs
 
 The typical install is done on a clean Ubuntu instance.  To begin `git` must be installed. After the `git` install clone the `ubuntuinit-desktop` repository and run the setup script. The following will update Ubuntu as well as install additional software. Each application is installed separately for documentation purposes (easier to read).
