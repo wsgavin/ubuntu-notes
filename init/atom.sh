@@ -9,7 +9,6 @@ apm install linter-ui-default
 apm install linter
 apm install linter-eslint
 apm install linter-php
-#apm install git-plus
 apm install linter-shellcheck
 apm install todo-show
 apm install project-manager

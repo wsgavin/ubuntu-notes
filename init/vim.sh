@@ -13,12 +13,22 @@ mkdir -p "$HOME/.vim/bundle"
 echo "done."
 
 # Install pathogen
-curl -LSso "$HOME/.vim/autoload/pathogen.vim" https://tpo.pe/pathogen.vim
+
+if [ ! -f "$HOME/.vim/autoload/pathogen.vim" ]; then
+
+  curl -LSso "$HOME/.vim/autoload/pathogen.vim" https://tpo.pe/pathogen.vim
+
+fi
 
 # Installing some plugins
-git clone git://github.com/tpope/vim-sensible.git \
-  "$HOME/.vim/bundle/vim-sensible"
-#git clone git://github.com/altercation/vim-colors-solarized.git \
-#  "$HOME/.vim/bundle/vim-colors-solarized"
+
+if [ ! -d "$HOME/.vim/bundle/vim-sensible" ]; then
+
+  git clone git://github.com/tpope/vim-sensible.git \
+    "$HOME/.vim/bundle/vim-sensible"
+  #git clone git://github.com/altercation/vim-colors-solarized.git \
+  #  "$HOME/.vim/bundle/vim-colors-solarized"
+
+fi
 
 echo
