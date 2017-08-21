@@ -24,7 +24,7 @@ fi
 
 # Adding Google Chrome repository
 
-ppa="http://dl.google.com/linux/chrome/deb/"
+ppa="https://dl.google.com/linux/chrome/deb/"
 
 if ! grep -sq "^deb .*$ppa" /etc/apt/sources.list /etc/apt/sources.list.d/*; then
 
