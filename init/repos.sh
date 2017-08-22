@@ -24,7 +24,7 @@ fi
 
 # Adding Google Chrome repository
 
-ppa="https://dl.google.com/linux/chrome/deb/"
+ppa="http://dl.google.com/linux/chrome/deb/"
 
 if ! grep -sq "^deb .*$ppa" /etc/apt/sources.list /etc/apt/sources.list.d/*; then
 
@@ -32,7 +32,7 @@ if ! grep -sq "^deb .*$ppa" /etc/apt/sources.list /etc/apt/sources.list.d/*; the
 
   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub \
     | sudo apt-key add -
-  sudo sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" \
+  sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" \
     >> /etc/apt/sources.list.d/google-chrome.list'
 
 else
