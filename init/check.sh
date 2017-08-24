@@ -1,5 +1,12 @@
 #!/bin/bash
 
+command -v lsb_release >/dev/null 2>&1 ||
+  {
+    echo
+    echo "Does not appear to be a Linux platfrom."
+    exit 1
+  }
+
 dist_id=$(lsb_release -si)
 release=$(lsb_release -sr)
 dist_id_support="Ubuntu"
@@ -20,14 +27,13 @@ echo $dist_id $release
 if [[ "$dist_id_support" != *"$dist_id"* ]] || \
   [[ "$release_support" != *"$release"* ]]; then
   echo
-  echo Linux $dist_id $release not supported at this time.
+  echo -e >&2 "${COLOR_RED}${CHAR_XMARK}${COLOR_RESET} Linux release not supported."
   exit 1
 fi
 
-unset dist_id
-unset release
-unset dist_id_support
-unset release_support
+echo
+# If we've made it here we should be good.
+echo -e "${COLOR_GREEN}${CHAR_CHECKMARK}${COLOR_RESET} Linux version supported."
 
 echo
 echo "Performing some checks to ensure ubuntuinit can continue."
@@ -44,6 +50,7 @@ echo
 printf "Enter password: "
 read -r sudo_password
 stty echo
+echo
 echo
 
 # Reseting sudo; just to ensure the test goes as planned.

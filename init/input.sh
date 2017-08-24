@@ -3,37 +3,12 @@
 # Regular expression for checking email. NOT PERFECT
 regex_email="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
 
-# Git values for configuraion
-git_fullname="$(getent passwd `whoami` | awk -F':' '{print $5}' | sed 's/,//g')"
-git_email=""
+# Grab the username of the current user
+username="$(whoami)"
 
-# stty -echo
-# echo
-# echo "Enter the administrative/sudo password for this system."
-# echo
-# printf "Enter password: "
-# read -r sudo_password
-# stty echo
-#
-# echo
-# echo "Checking if current user can sudo..."
-#
-# # Reseting sudo; just to ensure the test goes as planned.
-# sudo -k
-#
-# # Attempting to use the entered password with sudo.
-# is_sudoer="$(echo $sudo_password | sudo -vS &>/dev/null)"
-#
-# # If the exit status $? is not 0 something went wrong and we'll exit.
-# [ $? -eq 0 ] || { echo "Current user does not have sudoer access."; exit 1; }
-#
-# # Unsetting for good measure...
-# unset is_sudoer
-#
-# # If we've made it here we should be good.
-# echo "done."
-#
-# account_password="$sudo_password"
+# Git values for configuraion
+git_fullname="$(getent passwd $username | awk -F':' '{print $5}' | sed 's/,//g')"
+git_email=""
 
 echo
 echo "Configuring git settings..."
