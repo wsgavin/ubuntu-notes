@@ -1,5 +1,10 @@
 #!/bin/bash
 
+dist_id=$(lsb_release -si)
+release=$(lsb_release -sr)
+dist_id_support="Ubuntu"
+release_support="17.04,17.10"
+
 # Setting some color constants
 COLOR_GREEN="\x1b[0;32m"
 COLOR_RED="\x1b[0;31m"
@@ -8,6 +13,21 @@ COLOR_RESET="\x1b[0m"
 # Setting some escaped characters
 CHAR_CHECKMARK="\xE2\x9C\x93"
 CHAR_XMARK="\xE2\x9C\x97"
+
+echo
+echo $dist_id $release
+
+if [[ "$dist_id_support" != *"$dist_id"* ]] || \
+  [[ "$release_support" != *"$release"* ]]; then
+  echo
+  echo Linux $dist_id $release not supported at this time.
+  exit 1
+fi
+
+unset dist_id
+unset release
+unset dist_id_support
+unset release_support
 
 echo
 echo "Performing some checks to ensure ubuntuinit can continue."
