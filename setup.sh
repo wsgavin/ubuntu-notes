@@ -50,5 +50,6 @@ sudo apt autoclean
 . init/bash.sh
 . init/nodejs.sh
 . init/atom.sh
+. init/aws.sh
 
 exit 0
