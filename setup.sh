@@ -35,6 +35,8 @@ sudo apt install google-chrome-stable -y
 sudo apt install php -y
 sudo apt install shellcheck -y
 sudo apt install xclip -y
+sudo apt install sqlite3 -y
+sudo apt install hugo -y
 
 # May already be installed
 sudo apt install build-essential -y

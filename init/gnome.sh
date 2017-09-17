@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Setting gnome-terminal preferences..."
+echo "Setting gnome preferences..."
 
 # TODO Need to dermine how to update the profile and delete the default one.
 #      This currently works because the same image is used for testing. This
@@ -14,5 +14,7 @@ echo "Setting gnome-terminal preferences..."
 #dconf write /org/gnome/terminal/legacy/profiles:/${profile}foreground-color "'rgb(255,255,255)'"
 
 dconf load /org/gnome/terminal/legacy/profiles:/ < ./src/gnome-terminal/profile.dconf
+
+dconf write /org/gnome/desktop/interface/cursor-size 48
 
 echo "done."
