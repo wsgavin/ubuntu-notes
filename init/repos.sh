@@ -8,19 +8,34 @@ echo
 
 # Adding GitHub atom repository
 
-ppa="http://ppa.launchpad.net/webupd8team/atom/ubuntu"
+ppa="https://packagecloud.io/AtomEditor/atom/any/"
 
 if ! grep -sq "^deb .*$ppa" /etc/apt/sources.list /etc/apt/sources.list.d/*; then
 
   echo "Adding atom apt respository..."
 
-  sudo add-apt-repository ppa:webupd8team/atom -y
+  curl -sL https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
+  sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
 
 else
 
   echo "atom apt respository already exists..."
 
 fi
+
+# ppa="http://ppa.launchpad.net/webupd8team/atom/ubuntu"
+#
+# if ! grep -sq "^deb .*$ppa" /etc/apt/sources.list /etc/apt/sources.list.d/*; then
+#
+#   echo "Adding atom apt respository..."
+#
+#   sudo add-apt-repository ppa:webupd8team/atom -y
+#
+# else
+#
+#   echo "atom apt respository already exists..."
+#
+# fi
 
 # Adding Google Chrome repository
 
