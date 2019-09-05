@@ -3,6 +3,9 @@
 echo
 printf "Installing and configuring AWS tools..."
 
+# Adding now to remove message later after install
+export PATH="\$HOME/.local/bin:\$PATH"
+
 pip -q install awscli --upgrade --user
 
 if ! grep -q "\$HOME/.local/bin" $HOME/.profile

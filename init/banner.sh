@@ -18,7 +18,7 @@ WARRANTY. Use at your own risk. **
 The following script will install and configure an Ubuntu Linux system after
 the base installation. Configurations and installations are purely opinionated.
 
-This has been tested on Ubuntu Linux 15.10
+This has been tested on Ubuntu Linux 19.04
 
 Many thanks to https://mths.be/dotfiles
 

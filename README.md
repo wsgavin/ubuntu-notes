@@ -4,7 +4,7 @@ I created this git repository to make it easier for me to create Ubuntu desktop 
 
 **NOTE: Your results may vary; user beware.**
 
-**NOTE: Current scripts are being developed on Ubuntu Desktop 17.10**
+**NOTE: Current scripts are being developed on Ubuntu Desktop 19.04**
 
 ## Updates & Installs
 

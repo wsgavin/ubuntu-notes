@@ -8,10 +8,12 @@ apm install intentions
 apm install linter-ui-default
 apm install linter
 apm install linter-eslint
-apm install linter-php
+#apm install linter-php
 apm install linter-shellcheck
 apm install todo-show
 apm install project-manager
+apm install jekyll
+apm install markdown-writer
 # apm install seti-ui
 # apm install seti-syntax
 
