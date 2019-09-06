@@ -27,6 +27,7 @@ sudo apt install nmap -y
 sudo apt install python-pip -y
 sudo apt install python-gtkspellcheck -y
 sudo apt install python-virtualenv -y
+sudo apt install ruby-full -y
 sudo apt install moreutils -y
 sudo apt install curl -y
 sudo apt install ctags -y
@@ -54,5 +55,6 @@ sudo apt autoremove -y
 . init/nodejs.sh
 . init/atom.sh
 . init/aws.sh
+. init/ruby.sh
 
 exit 0
