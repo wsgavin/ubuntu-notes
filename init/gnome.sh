@@ -1,9 +1,9 @@
 #!/bin/bash
 
-dist_id=$(lsb_release -si)
-release=$(lsb_release -sr)
-dist_id_support="Ubuntu"
-release_support="18.04"
+#dist_id=$(lsb_release -si)
+#release=$(lsb_release -sr)
+#dist_id_support="Ubuntu"
+#release_support="18.04"
 
 echo "Setting gnome preferences..."
 
@@ -20,14 +20,14 @@ echo "Setting gnome preferences..."
 
 dconf load /org/gnome/terminal/legacy/profiles:/ < ./src/gnome-terminal/profile.dconf
 
-dconf write /org/gnome/desktop/interface/cursor-size 48
+dconf write /org/gnome/desktop/interface/cursor-size 24
 
-echo "Setting some theme detials..."
+#echo "Setting some theme detials..."
 
-if [[ "$dist_id_support" == *"$dist_id"* ]] && \
-  [[ "$release_support" == *"$release"* ]]; then
-    
-  sudo snap install communitheme
-fi
+#if [[ "$dist_id_support" == *"$dist_id"* ]] && \
+#  [[ "$release_support" == *"$release"* ]]; then
+
+#  sudo snap install communitheme
+#fi
 
 echo "done."
