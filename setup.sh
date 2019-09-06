@@ -44,7 +44,7 @@ sudo apt install linux-headers-"$(uname -r)" -y
 
 sudo apt clean
 sudo apt autoclean
-sudo apt autoremove
+sudo apt autoremove -y
 
 # Initializing scripts...
 . init/gnome.sh
