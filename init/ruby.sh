@@ -25,7 +25,6 @@ eval "$(rbenv init -)"
 RUBY_VER="$(rbenv install -l | sed -n '/^[[:space:]]*[0-9]\{1,\}\.[0-9]\{1,\}\.[0-9]\{1,\}[[:space:]]*$/ h;${g;p;}' | tr -d '[:space:]')"
 
 cat <<EOT >> ${HOME}/.bashrc
-
 #### rbenv ####
 
 export RBENV_ROOT="$HOME/.rbenv"
@@ -41,7 +40,6 @@ if [ "\$RUBY_VER_INSTALLED" != "\$RUBY_VER_LATEST" ]; then
 fi
 
 #### rbenv ####
-
 EOT
 
 echo

@@ -26,7 +26,6 @@ eval "$(pyenv init -)"
 PYTHON_VER="$(pyenv install -l | sed -n '/^[[:space:]]*[0-9]\{1,\}\.[0-9]\{1,\}\.[0-9]\{1,\}[[:space:]]*$/ h;${g;p;}' | tr -d '[:space:]')"
 
 cat <<EOT >> ${HOME}/.bashrc
-
 #### pyenv ####
 
 export PYENV_ROOT="$HOME/.pyenv"
@@ -43,7 +42,6 @@ if [ "\$PYTHON_VER_INSTALLED" != "\$PYTHON_VER_LATEST" ]; then
 fi
 
 #### pyenv ####
-
 EOT
 
 echo
