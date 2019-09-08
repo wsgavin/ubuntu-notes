@@ -58,11 +58,10 @@ echo
 gem install jekyll
 echo
 gem install bundler
+echo
+gem install s3_website
 
 rbenv rehash
-
-echo
-echo done.
 
 # rm -rf ~/.rbenv
 # rm -rf ~/.gemrc
