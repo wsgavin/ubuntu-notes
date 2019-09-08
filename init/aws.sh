@@ -10,16 +10,15 @@ export PATH=$HOME/.local/bin:$PATH
 
 pip -q install awscli --upgrade --user
 
-if ! grep -q "\$HOME/.local/bin" $HOME/.profile
-then
+cat <<EOT >> ${HOME}/.bashrc
 
-cat <<EOT >> ${HOME}/.profile
+#### aws_cli ####
 
-if [ -d "\$HOME/.local/bin" ] ; then
-    PATH="\$HOME/.local/bin:\$PATH"
-fi
+export LOCAL_HOME_ROOT="$HOME/.local"
+export PATH="\$LOCAL_HOME_ROOT/bin:\$PATH"
+
+#### aws ####
 
 EOT
-fi
 
 echo done.

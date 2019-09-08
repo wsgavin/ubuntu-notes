@@ -24,24 +24,30 @@ sudo apt dist-upgrade -y
 sudo apt install git -y
 sudo apt install vim -y
 sudo apt install nmap -y
-sudo apt install python-pip -y
-sudo apt install python-gtkspellcheck -y
-sudo apt install python-virtualenv -y
-sudo apt install ruby-full -y
 sudo apt install moreutils -y
 sudo apt install curl -y
 sudo apt install ctags -y
 sudo apt install atom -y
 sudo apt install google-chrome-stable -y
-#sudo apt install php -y
 sudo apt install shellcheck -y
 sudo apt install xclip -y
-#sudo apt install sqlite3 -y
-#sudo apt install hugo -y
+sudo apt install sqlite3 -y
 
-# May already be installed
 sudo apt install build-essential -y
 sudo apt install linux-headers-"$(uname -r)" -y
+
+#needed for rbenv
+sudo apt install autoconf -y
+sudo apt install bison -y
+sudo apt install libssl-dev -y
+sudo apt install libyaml-dev -y
+sudo apt install libreadline6-dev -y
+sudo apt install libncurses5-dev -y
+sudo apt install libffi-dev -y
+
+# needed for pyenv
+sudo apt install libbz2-dev -y
+sudo apt install libsqlite3-dev -y
 
 sudo apt clean
 sudo apt autoclean
@@ -56,5 +62,6 @@ sudo apt autoremove -y
 . init/atom.sh
 . init/aws.sh
 . init/ruby.sh
+. init/python.sh
 
 exit 0
