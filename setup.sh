@@ -60,8 +60,8 @@ sudo apt autoremove -y
 . init/bash.sh
 . init/nodejs.sh
 . init/atom.sh
-. init/aws.sh
 . init/ruby.sh
 . init/python.sh
+. init/aws.sh
 
 exit 0

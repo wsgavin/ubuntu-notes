@@ -34,7 +34,7 @@ export PATH="\$RBENV_ROOT/bin:\$PATH"
 eval "\$(rbenv init -)"
 
 export RUBY_VER_INSTALLED="${RUBY_VER}"
-export RUBY_VER_LATEST="$(rbenv install -l | sed -n '/^[[:space:]]*[0-9]\{1,\}\.[0-9]\{1,\}\.[0-9]\{1,\}[[:space:]]*$/ h;${g;p;}' | tr -d '[:space:]')"
+export RUBY_VER_LATEST="\$(rbenv install -l | sed -n '/^[[:space:]]*[0-9]\{1,\}\.[0-9]\{1,\}\.[0-9]\{1,\}[[:space:]]*\$/ h;\${g;p;}' | tr -d '[:space:]')"
 
 if [ "\$RUBY_VER_INSTALLED" != "\$RUBY_VER_LATEST" ]; then
     echo -e "${COLOR_GREEN}${CHAR_ARROW}${COLOR_RESET} New version of ruby is available: \$RUBY_VER_INSTALLED -> ${COLOR_GREEN}\$RUBY_VER_LATEST${COLOR_RESET}"

@@ -36,7 +36,7 @@ eval "\$(pyenv init -)"
 eval "\$(pyenv virtualenv-init -)"
 
 export PYTHON_VER_INSTALLED="${PYTHON_VER}"
-export PYTHON_VER_LATEST="$(pyenv install -l | sed -n '/^[[:space:]]*[0-9]\{1,\}\.[0-9]\{1,\}\.[0-9]\{1,\}[[:space:]]*$/ h;${g;p;}' | tr -d '[:space:]')"
+export PYTHON_VER_LATEST="\$(pyenv install -l | sed -n '/^[[:space:]]*[0-9]\{1,\}\.[0-9]\{1,\}\.[0-9]\{1,\}[[:space:]]*\$/ h;\${g;p;}' | tr -d '[:space:]')"
 
 if [ "\$PYTHON_VER_INSTALLED" != "\$PYTHON_VER_LATEST" ]; then
     echo -e "${COLOR_GREEN}${CHAR_ARROW}${COLOR_RESET} New version of python is available: \$PYTHON_VER_INSTALLED -> ${COLOR_GREEN}\$PYTHON_VER_LATEST${COLOR_RESET}"
@@ -49,10 +49,12 @@ EOT
 echo
 pyenv install "$PYTHON_VER"
 echo
+
 pyenv global "$PYTHON_VER"
 echo
 
-echo done.
+pip install --upgrade pip
+echo
 
 # rm -rf ~/.pyenv
 # sed -i '/#### pyenv/, /#### pyenv/d' ~/.bashrc
