@@ -20,7 +20,7 @@ cat <<EOT >> ${HOME}/.bashrc
 #### nodenv ####
 
 export NODENV_ROOT="$HOME/.nodenv"
-export PATH="\$nodenv_ROOT/bin:\$PATH"
+export PATH="\$NODENV_ROOT/bin:\$PATH"
 
 eval "\$(nodenv init -)"
 
@@ -34,8 +34,14 @@ fi
 #### nodenv ####
 EOT
 
+echo
 nodenv install "$NODEJS_VER"
+echo
+nodenv global "$NODEJS_VER" 
+echo
 npm update --global
+
+nodenv rehash
 
 # rm -rf ~/.nodenv
 # rm -rf ~/.npm
