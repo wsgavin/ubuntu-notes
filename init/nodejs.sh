@@ -1,44 +1,41 @@
 #!/bin/bash
 
-# Installing nodejs with nvm
-
-# TODO Find a way to get the latest version of nvm installed.
-#      The following command gives you the latest version
-#        git describe --abbrev=0 --tags --match "v[0-9]*" origin
-#
-#      First check to see if it's installed.
-#        If installed, run the git sequence described on the site
-#      If not installed, determine latest version
-#        install...
-
 echo
-echo "Installing nvm..."
+echo Installing and configuring nodejs...
 
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+git clone https://github.com/nodenv/nodenv.git ~/.nodenv
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export NODENV_ROOT="$HOME/.nodenv"
+export PATH="$NODENV_ROOT/bin:$PATH"
 
-echo done.
-echo
-echo "Installing nodejs..."
+mkdir -p "$(nodenv root)"/plugins
+git clone https://github.com/nodenv/node-build.git "$(nodenv root)"/plugins/node-build
 
-nvm install node 2>&1
-nvm alias default node
+eval "$(nodenv init -)"
 
+# Grabbing the latest version release of python.
+NODEJS_VER="$(nodenv install -l | sed -n '/^[[:space:]]*[0-9]\{1,\}\.[0-9]\{1,\}\.[0-9]\{1,\}[[:space:]]*$/ h;${g;p;}' | tr -d '[:space:]')"
+
+cat <<EOT >> ${HOME}/.bashrc
+#### nodenv ####
+
+export NODENV_ROOT="$HOME/.nodenv"
+export PATH="\$nodenv_ROOT/bin:\$PATH"
+
+eval "\$(nodenv init -)"
+
+export NODEJS_VER_INSTALLED="${NODEJS_VER}"
+export NODEJS_VER_LATEST="\$(nodenv install -l | sed -n '/^[[:space:]]*[0-9]\{1,\}\.[0-9]\{1,\}\.[0-9]\{1,\}[[:space:]]*\$/ h;\${g;p;}' | tr -d '[:space:]')"
+
+if [ "\$NODEJS_VER_INSTALLED" != "\$NODEJS_VER_LATEST" ]; then
+    echo -e "${COLOR_GREEN}${CHAR_ARROW}${COLOR_RESET} New version of nodejs is available: \$NODEJS_VER_INSTALLED -> ${COLOR_GREEN}\$NODEJS_VER_LATEST${COLOR_RESET}"
+fi
+
+#### nodenv ####
+EOT
+
+nodenv install "$NODEJS_VER"
 npm update --global
 
-npm install --global \
-  yo \
-#  grunt-cli \
-#  bower \
-
-echo
-echo "done."
-
-# Notes
-# git clone https://github.com/nodenv/nodenv.git ~/.nodenv
-# echo 'export PATH="$HOME/.nodenv/bin:$PATH"' >> ~/.bashrc
-# eval statement
-# mkdir -p "$(nodenv root)"/plugins
-# git clone https://github.com/nodenv/node-build.git "$(nodenv root)"/plugins/node-build
+# rm -rf ~/.nodenv
+# rm -rf ~/.npm
