@@ -1,37 +1,47 @@
 #!/bin/bash
 
-# Installing nodejs with nvm
+echo
+echo Installing and configuring nodejs...
 
-# TODO Find a way to get the latest version of nvm installed.
-#      The following command gives you the latest version
-#        git describe --abbrev=0 --tags --match "v[0-9]*" origin
-#
-#      First check to see if it's installed.
-#        If installed, run the git sequence described on the site
-#      If not installed, determine latest version
-#        install...
+git clone https://github.com/nodenv/nodenv.git ~/.nodenv
+
+export NODENV_ROOT="$HOME/.nodenv"
+export PATH="$NODENV_ROOT/bin:$PATH"
+
+mkdir -p "$(nodenv root)"/plugins
+git clone https://github.com/nodenv/node-build.git "$(nodenv root)"/plugins/node-build
+
+eval "$(nodenv init -)"
+
+# Grabbing the latest version release of python.
+NODEJS_VER="$(nodenv install -l | sed -n '/^[[:space:]]*[0-9]\{1,\}\.[0-9]\{1,\}\.[0-9]\{1,\}[[:space:]]*$/ h;${g;p;}' | tr -d '[:space:]')"
+
+cat <<EOT >> ${HOME}/.bashrc
+#### nodenv ####
+
+export NODENV_ROOT="$HOME/.nodenv"
+export PATH="\$NODENV_ROOT/bin:\$PATH"
+
+eval "\$(nodenv init -)"
+
+export NODEJS_VER_INSTALLED="${NODEJS_VER}"
+export NODEJS_VER_LATEST="\$(nodenv install -l | sed -n '/^[[:space:]]*[0-9]\{1,\}\.[0-9]\{1,\}\.[0-9]\{1,\}[[:space:]]*\$/ h;\${g;p;}' | tr -d '[:space:]')"
+
+if [ "\$NODEJS_VER_INSTALLED" != "\$NODEJS_VER_LATEST" ]; then
+    echo -e "${COLOR_GREEN}${CHAR_ARROW}${COLOR_RESET} New version of nodejs is available: \$NODEJS_VER_INSTALLED -> ${COLOR_GREEN}\$NODEJS_VER_LATEST${COLOR_RESET}"
+fi
+
+#### nodenv ####
+EOT
 
 echo
-echo "Installing nvm..."
-
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-echo done.
+nodenv install "$NODEJS_VER"
 echo
-echo "Installing nodejs..."
-
-nvm install node 2>&1
-nvm alias default node
-
+nodenv global "$NODEJS_VER" 
+echo
 npm update --global
 
-npm install --global \
-  yo \
-#  grunt-cli \
-#  bower \
+nodenv rehash
 
-echo
-echo "done."
+# rm -rf ~/.nodenv
+# rm -rf ~/.npm

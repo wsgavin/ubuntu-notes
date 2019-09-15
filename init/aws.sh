@@ -1,25 +1,20 @@
 #!/bin/sh
 
 echo
-printf "Installing and configuring AWS tools..."
+echo Installing and configuring AWS tools...
 
 #TODO add input for configuring.
 
 # Adding now to remove message later after install
 export PATH=$HOME/.local/bin:$PATH
 
-pip -q install awscli --upgrade --user
+pip install --upgrade --user awscli
 
-if ! grep -q "\$HOME/.local/bin" $HOME/.profile
-then
+cat <<EOT >> ${HOME}/.bashrc
+#### awscli ####
 
-cat <<EOT >> ${HOME}/.profile
+export LOCAL_HOME_ROOT="$HOME/.local"
+export PATH="\$LOCAL_HOME_ROOT/bin:\$PATH"
 
-if [ -d "\$HOME/.local/bin" ] ; then
-    PATH="\$HOME/.local/bin:\$PATH"
-fi
-
+#### awscli ####
 EOT
-fi
-
-echo done.
