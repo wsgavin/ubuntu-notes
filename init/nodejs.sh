@@ -19,7 +19,7 @@ NODEJS_VER="$(nodenv install -l | sed -n '/^[[:space:]]*[0-9]\{1,\}\.[0-9]\{1,\}
 cat <<EOT >> ${HOME}/.bashrc
 #### nodenv ####
 
-export NODENV_ROOT="$HOME/.nodenv"
+export NODENV_ROOT="\$HOME/.nodenv"
 export PATH="\$NODENV_ROOT/bin:\$PATH"
 
 eval "\$(nodenv init -)"
@@ -37,7 +37,7 @@ EOT
 echo
 nodenv install "$NODEJS_VER"
 echo
-nodenv global "$NODEJS_VER" 
+nodenv global "$NODEJS_VER"
 echo
 npm update --global
 

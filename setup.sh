@@ -58,6 +58,7 @@ sudo apt autoremove -y
 . init/git.sh
 . init/vim.sh
 . init/bash.sh
+. init/ssh.sh
 . init/nodejs.sh
 . init/atom.sh
 . init/ruby.sh

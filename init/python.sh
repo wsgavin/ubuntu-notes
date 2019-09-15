@@ -28,7 +28,7 @@ PYTHON_VER="$(pyenv install -l | sed -n '/^[[:space:]]*[0-9]\{1,\}\.[0-9]\{1,\}\
 cat <<EOT >> ${HOME}/.bashrc
 #### pyenv ####
 
-export PYENV_ROOT="$HOME/.pyenv"
+export PYENV_ROOT="\$HOME/.pyenv"
 export PATH="\$PYENV_ROOT/bin:\$PATH"
 
 eval "\$(pyenv init -)"

@@ -27,7 +27,7 @@ RUBY_VER="$(rbenv install -l | sed -n '/^[[:space:]]*[0-9]\{1,\}\.[0-9]\{1,\}\.[
 cat <<EOT >> ${HOME}/.bashrc
 #### rbenv ####
 
-export RBENV_ROOT="$HOME/.rbenv"
+export RBENV_ROOT="\$HOME/.rbenv"
 export PATH="\$RBENV_ROOT/bin:\$PATH"
 
 eval "\$(rbenv init -)"
