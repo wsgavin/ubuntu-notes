@@ -43,5 +43,5 @@ npm update --global
 
 nodenv rehash
 
-# rm -rf ~/.nodenv
-# rm -rf ~/.npm
+# rm -rf ~/.nodenv ~/.npm
+# sed -i '/#### nodenv/, /#### nodenv/d' ~/.bashrc

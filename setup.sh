@@ -44,6 +44,7 @@ sudo apt install libyaml-dev -y
 sudo apt install libreadline6-dev -y
 sudo apt install libncurses5-dev -y
 sudo apt install libffi-dev -y
+sudo apt install zlib1g-dev -y
 
 # needed for pyenv
 sudo apt install libbz2-dev -y

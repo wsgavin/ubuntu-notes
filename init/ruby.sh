@@ -61,8 +61,5 @@ gem install s3_website
 
 rbenv rehash
 
-# rm -rf ~/.rbenv
-# rm -rf ~/.gemrc
-# rm -rf ~/.gem
-# rm -rf ~/.bundler
+# rm -rf ~/.rbenv ~/.gemrc ~/.gem ~/.bundler
 # sed -i '/#### rbenv/, /#### rbenv/d' ~/.bashrc
