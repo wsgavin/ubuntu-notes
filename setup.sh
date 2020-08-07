@@ -14,6 +14,7 @@ unset git_email
 
 # Initializing apt
 sudo apt update
+sudo apt upgrade -y
 sudo apt dist-upgrade -y
 
 # Installing various applications...
