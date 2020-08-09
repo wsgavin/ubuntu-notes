@@ -5,4 +5,4 @@ use-theme-colors=false
 visible-name='Default'
 foreground-color='rgb(255,255,255)'
 use-system-font=false
-font='Ubuntu Mono 16'
+font='Ubuntu Mono 12'

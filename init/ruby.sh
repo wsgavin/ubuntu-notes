@@ -22,7 +22,7 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # Grabbing the latest version release of ruby.
-RUBY_VER="$(rbenv install -l | sed -n '/^[[:space:]]*[0-9]\{1,\}\.[0-9]\{1,\}\.[0-9]\{1,\}[[:space:]]*$/ h;${g;p;}' | tr -d '[:space:]')"
+RUBY_VER="$(rbenv install --list 2>/dev/null | sed -n '/^[[:space:]]*[0-9]\{1,\}\.[0-9]\{1,\}\.[0-9]\{1,\}[[:space:]]*$/ h;${g;p;}' | tr -d '[:space:]')"
 
 cat <<EOT >> ${HOME}/.bashrc
 #### rbenv ####
@@ -32,8 +32,10 @@ export PATH="\$RBENV_ROOT/bin:\$PATH"
 
 eval "\$(rbenv init -)"
 
+git -C ~/.rbenv/plugins/ruby-build/ pull 2>/dev/null 1>/dev/null
+
 export RUBY_VER_INSTALLED="${RUBY_VER}"
-export RUBY_VER_LATEST="\$(rbenv install -l | sed -n '/^[[:space:]]*[0-9]\{1,\}\.[0-9]\{1,\}\.[0-9]\{1,\}[[:space:]]*\$/ h;\${g;p;}' | tr -d '[:space:]')"
+export RUBY_VER_LATEST="\$(rbenv install --list 2>/dev/null | sed -n '/^[[:space:]]*[0-9]\{1,\}\.[0-9]\{1,\}\.[0-9]\{1,\}[[:space:]]*\$/ h;\${g;p;}' | tr -d '[:space:]')"
 
 if [ "\$RUBY_VER_INSTALLED" != "\$RUBY_VER_LATEST" ]; then
     echo -e "${COLOR_GREEN}${CHAR_ARROW}${COLOR_RESET} New version of ruby is available: \$RUBY_VER_INSTALLED -> ${COLOR_GREEN}\$RUBY_VER_LATEST${COLOR_RESET}"
